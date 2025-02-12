@@ -234,23 +234,25 @@ export default function Todo() {
                               borderRadius: "8px",
                             }}
                           />
-                          <Form.Control
-                            type="text"
-                            value={editingTodo.category}
-                            onChange={(e) =>
-                              setEditingTodo({
-                                ...editingTodo,
-                                category: e.target.value,
-                              })
-                            }
-                            className="mb-2"
-                            style={{
-                              padding: "15px",
-                              fontSize: "18px",
-                              borderRadius: "8px",
-                            }}
-                          />
-                          <Button onClick={updateTodo} variant="success" className="me-2">
+                          <Form.Select
+                          value={editingTodo.category}
+                          onChange={(e) => setEditingTodo({ ...editingTodo, category: e.target.value })}
+                          style={{
+                            padding: "20px",
+                            marginBottom: "10px",
+                            fontSize: "18px",
+                            borderRadius: "12px",
+                            border: "1.5px solid #e1e1e1",
+                          }}
+                          >
+                          <option value="">카테고리 선택</option>
+                          <option value="PERSONAL">PERSONAL</option>
+                          <option value="WORK">WORK</option>
+                          <option value="HEALTH">HEALTH</option>
+                          <option value="SHOPPING">SHOPPING</option>
+                          <option value="ETC">ETC</option>
+                          </Form.Select>
+                          <Button onClick={updateTodo} variant="primary" className="me-2">
                             저장
                           </Button>
                           <Button onClick={() => setEditingTodo(null)} variant="secondary">
