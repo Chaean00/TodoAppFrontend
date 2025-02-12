@@ -1,4 +1,4 @@
-# Clush Todo Application
+# Clush Todo Application Frontend
 ## 1. 앱 설명 및 버전 정보
 Todo App은 Vite와 React를 기반으로 제작되었습니다.
 
