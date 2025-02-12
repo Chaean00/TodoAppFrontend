@@ -46,7 +46,7 @@ export default function Todo() {
   // Todo 삭제
     const deleteTodo = async (id) => {
         try {
-            const res = await todoApi.deleteTodo(id);
+            await todoApi.deleteTodo(id);
             setTodos((prev) => prev.filter((todo) => todo.id !== id));
         } catch (error) {
             console.error("Todo 삭제 Error" + error);
@@ -56,7 +56,7 @@ export default function Todo() {
   // Todo 완료
     const completeTodo = async (id) => {
         try {
-            const res = await todoApi.updateCompleteTodo(id);
+            await todoApi.updateCompleteTodo(id);
             setTodos((prev) => prev.map((todo) => todo.id === id ? {...todo, completed: !todo.completed} : todo));
         } catch (error) {
             console.error("Todo 완료 상태 변경 Error" + error);
@@ -116,7 +116,7 @@ export default function Todo() {
         <div style={{ minHeight: "100vh", backgroundColor: "#f9f9f9" }}>
           <Navbar bg="light" expand="lg" className="mb-4">
             <Container>
-              <Navbar.Brand href="#home">Todo App</Navbar.Brand>
+              <Navbar.Brand>Todo App</Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                 <Form className="d-flex me-2">
